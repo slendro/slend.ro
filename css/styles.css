@@ -1,0 +1,192 @@
+body {
+  margin: 0;
+  /* width: 100%;
+  height: 100%; */
+}
+
+#slend_toolbar {
+  height: 5%;
+  text-align: center;
+}
+
+#slend_desktop {
+  background-color: white;
+  z-index: -1;
+}
+
+#slend_logo {
+  max-width: 150px;
+}
+
+.slend_flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  column-gap: 30px;
+}
+
+#software_logo img {
+  max-width: 50%;
+  margin-left: 25%;
+  margin-top: 5%;
+  margin-bottom: 15%;
+  opacity: 5%;
+}
+
+.close_button:hover {
+  color: red;
+}
+
+.slend_window {
+  position: absolute;
+  z-index: 999;
+  background-color: #f1f1f1;
+  border: 1px solid #d3d3d3;
+  text-align: center;
+  width: 650px;
+}
+
+.folder {
+  background-color: #f1f1f1;
+  border: 1px solid #d3d3d3;
+  z-index: 1;
+}
+
+.in-front {
+  z-index: 999;
+}
+
+.behind {
+  z-index: 1;
+}
+
+.slend_window_header {
+  position: relative;
+  left: 0;
+  margin: 0;
+  display: flex;
+  column-gap: 30%;
+  padding: 10px;
+  cursor: move;
+  z-index: 10;
+  background-color: black;
+  color: #fff;
+}
+
+.slend_window_image {
+  max-width: 100%;
+}
+
+.window_buttons {
+  display: flex;
+  column-gap: 10px;
+}
+
+.slend_icon {
+  position: absolute;
+  z-index: 9;
+}
+
+.slend_bottomTabs_container {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  z-index: 999;
+}
+
+.slend_bottomTabs {
+  display: flex;
+  justify-content: flex-end;
+  row-gap: 10px;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  overflow-wrap: normal;
+}
+
+.absolute {
+  position: absolute !important;
+}
+
+.flex-item {
+  padding: 0;
+  width: 20%;
+  height: 100%;
+  margin-top: 0;
+  margin-right: 0;
+  line-height: 0;
+  color: black;
+  text-align: center;
+  display: inline-block;
+}
+
+.slend_minimized {
+  position: inherit !important;
+  display: inline-block;
+  left: 0;
+  top: 0;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 999;
+}
+
+.slend_minimized .slend_window_header {
+  height: 100%;
+  width: 100%;
+  z-index: 999;
+}
+
+.slend_minimized img {
+  display: none;
+}
+
+.ico_foldered {
+  position: relative;
+  max-width: 50px;
+  padding: 20px;
+}
+
+.folder_icons {
+  display: flex;
+  column-gap: 10px;
+}
+
+.ico_selected {
+  background-color: rgb(1, 158, 124);
+}
+
+.slend_icon:hover {
+  background-color: rgb(1, 158, 124);
+  color: white;
+}
+
+.slend_desktop_grid {
+  display: flex;
+  width: 700px;
+}
+
+.icon_img {
+  max-width: 50px;
+}
+
+.icon_img img {
+  width: 50px;
+}
+
+.icon_label {
+  padding-top: 7px;
+}
+
+#noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+}
