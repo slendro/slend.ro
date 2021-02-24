@@ -18,6 +18,16 @@ body {
   max-width: 150px;
 }
 
+.webcam {
+  width: 900px !important;
+  height: 600px;
+}
+
+#webcam-canvas-container {
+  width: 100%;
+  height: 100%;
+}
+
 .slend_flex {
   display: flex;
   align-items: center;

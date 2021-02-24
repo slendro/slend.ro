@@ -3,12 +3,14 @@ var icons = document.getElementsByClassName("slend_icon");
 var merch = document.getElementsByClassName("merch");
 var tabs = document.getElementsByClassName("slend_minimized");
 var stacking = true;
+var webcamOn = false;
 
 $(document).ready(function(){
 
   // $(".merch_icon").click(loadMerch);
   $(".clean_up").click(cleanUp);
   $(".folder").hide();
+  $("#webcam-canvas").hide();
 
   $(document).on("click",".slend_icon", function () {
     loadFolder(this);
@@ -120,10 +122,12 @@ $(document).ready(function(){
 
     $(newWindow).addClass(".in-front");
 
+    var window = $("#"+data);
+
     if(classN.includes("foldered"))
     {
       console.log(newWindow);
-      var window = $("#"+data);
+      
       window.show();
       setWindowPosition(window[0],$(windows).index(window));
       $(elmnt).addClass("ico_selected");
@@ -144,6 +148,16 @@ $(document).ready(function(){
         setWindowPosition(newWindow,35 + $(windows).index(window));
         $(elmnt).addClass("ico_selected");
       }
+    }
+    
+    if(data == "webcam" && !webcamOn)
+    {
+      webcamCanvas.parent('webcam-canvas-container');
+      console.log(document.getElementById($(".webcam").attr('id')).getBoundingClientRect().width);
+
+      resize(Math.floor(document.getElementById($(".webcam").attr('id')).getBoundingClientRect().width), Math.floor(document.getElementById($(".webcam").attr('id')).getBoundingClientRect().height));
+      console.log("reee");
+      webcamOn = true;
     }
   }
 

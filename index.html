@@ -2,6 +2,10 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <script language="javascript" type="text/javascript" src="libraries/p5.js"></script>
+        <script language="javascript" src="libraries/p5.dom.js"></script>
+        <script language="javascript" src="libraries/p5.sound.js"></script>
+        <script language="javascript" type="text/javascript" src="js/sketch.js"></script>
         <link rel="stylesheet" href="css/styles.css">
     </head>
     <body>
@@ -66,7 +70,7 @@
                     ?
                 </div>
             </div>
-            <div class="slend_icon" id="icon_5">
+            <div class="slend_icon" id="icon_5" data-windows="paint">
                 <div class="icon_img" id="icon_5_header">
                     <img src="image/icons/Paintbrush.ico">
                 </div>
@@ -136,6 +140,14 @@
                 </div>
                 <div class="icon_label" id="noselect"> 
                     Notes
+                </div>
+            </div>
+            <div class="slend_icon" id="icon_15" data-windows="webcam">
+                <div class="icon_img" id="icon_15_header">
+                    <img src="image/icons/Camera.ico">
+                </div>
+                <div class="icon_label" id="noselect"> 
+                    Photobooth
                 </div>
             </div>
 
@@ -319,6 +331,25 @@
                             tamiya.mp3
                         </div>
                     </div>
+                </div>
+            </div>
+
+            <div class="slend_window webcam" id="window_11"> 
+                <div class="slend_window_header" id="window_11_header">
+                    <div class="window_buttons">
+                        <div class="close_button">
+                            X
+                        </div>
+                        <div class="minimize_button">
+                            ━
+                        </div>
+                    </div>
+                    <div id="slend_window_title">
+                        say_cheese!
+                    </div>
+                </div>
+                <div id="webcam-canvas-container">
+
                 </div>
             </div>
 <!--        
