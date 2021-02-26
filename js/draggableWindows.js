@@ -155,7 +155,9 @@ $(document).ready(function(){
       webcamCanvas.parent('webcam-canvas-container');
       console.log(document.getElementById($(".webcam").attr('id')).getBoundingClientRect().width);
 
+      showCamera();
       resize(Math.floor(document.getElementById($(".webcam").attr('id')).getBoundingClientRect().width), Math.floor(document.getElementById($(".webcam").attr('id')).getBoundingClientRect().height));
+      // resize(600,400);
       console.log("reee");
       webcamOn = true;
     }
@@ -227,6 +229,13 @@ $(document).ready(function(){
   function closeWindow(elmnt)
   {
     $(elmnt.target.parentElement.parentElement.parentElement).hide();
+    var parentWindow = $(elmnt.target)[0].parentElement.parentElement.parentElement;
+    console.log(parentWindow.className);
+    if(parentWindow.className.includes("webcam"))
+    {
+      webcamOn = false;
+      stopCamera();
+    }
   }
 
   function minimizeWindow(elmnt)

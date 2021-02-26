@@ -18,6 +18,10 @@ body {
   max-width: 150px;
 }
 
+#effectSlider {
+  z-index: 999;
+}
+
 .webcam {
   width: 900px !important;
   height: 600px;
