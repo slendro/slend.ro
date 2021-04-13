@@ -33,7 +33,7 @@ function showCamera(){
     src = seriously.source("#webcam-source");
     target = seriously.target("#webcam-canvas");
 
-    // kaleidoscope(0, 0);
+    //kaleidoscope(6, 0);
     nv();
 
     seriously.go();
