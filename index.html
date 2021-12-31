@@ -50,8 +50,6 @@
 		<script type="text/javascript" src="libraries/effects/seriously.vignette.js"></script>
 		<script type="text/javascript" src="libraries/effects/seriously.split.js"></script>
         <script language="javascript" type="text/javascript" src="js/sketch.js"></script>
-        <script src="/libraries/node_modules/howler/dist/howler.js"></script>
-        <script src="/js/music_player.js"></script>
         <link rel="stylesheet" href="css/styles.css">
         <link rel="stylesheet" href="css/howler.css">
     </head>
@@ -418,9 +416,9 @@
                     <div class="title" style="text-align: center;color: black;"> slendr-o player </div>
                     <div class="padding"></div>
                     <div id="station0" class="station">
-                       <div class="title">
+                       <div class="track">
                           <div id="title0" class="subtitle"></div>
-                          <div id="live0" class="live">LIVE</div>
+                          <div id="live0" class="live">PLAYING</div>
                           <div id="playing0" class="playing">
                              <div class="rect1"></div>
                              <div class="rect2"></div>
@@ -430,6 +428,47 @@
                           </div>
                        </div>
                     </div>
+                    <div id="station1" class="station">
+                        <div class="track">
+                           <div id="title1" class="subtitle"></div>
+                           <div class="playing-wrapper">
+                                <div id="live1" class="live">LIVE</div>
+                                <div id="playing1" class="playing">
+                                    <div class="rect1"></div>
+                                    <div class="rect2"></div>
+                                    <div class="rect3"></div>
+                                    <div class="rect4"></div>
+                                    <div class="rect5"></div>
+                                </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div id="station2" class="station">
+                        <div class="track">
+                           <div id="title2" class="subtitle"></div>
+                           <div id="live2" class="live">PLAYING</div>
+                           <div id="playing2" class="playing">
+                              <div class="rect1"></div>
+                              <div class="rect2"></div>
+                              <div class="rect3"></div>
+                              <div class="rect4"></div>
+                              <div class="rect5"></div>
+                           </div>
+                        </div>
+                     </div>
+                     <div id="station3" class="station">
+                        <div class="track">
+                           <div id="title3" class="subtitle"></div>
+                           <div id="live3" class="live">PLAYING</div>
+                           <div id="playing3" class="playing">
+                              <div class="rect1"></div>
+                              <div class="rect2"></div>
+                              <div class="rect3"></div>
+                              <div class="rect4"></div>
+                              <div class="rect5"></div>
+                           </div>
+                        </div>
+                     </div>
                     </div>
                     <div class="padding"></div>
                 </div>
@@ -483,5 +522,7 @@
     <footer>
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
         <script src="js/draggableWindows.js"></script>
+        <script src="libraries/node_modules/howler/dist/howler.js"></script>
+        <script src="js/music_player.js"></script>
     </footer>
 </html>

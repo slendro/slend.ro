@@ -11,10 +11,10 @@ var Radio = function (stations) {
         window['station' + i].addEventListener('click', function (index) {
             var isNotPlaying = (self.stations[index].howl && !self.stations[index].howl.playing());
 
-            radio.stop();
+            self.stop();
 
             if (isNotPlaying || !self.stations[index].howl) {
-                radio.play(index);
+                self.play(index);
             }
         }.bind(self, i));
     }
@@ -71,33 +71,27 @@ Radio.prototype = {
 
 var radio = new Radio([
     {
-        freq: '91.1',
-        title: "Radio City",
+        freq: '(Demo)',
+        title: "Closer",
         src: '../tracks/Closer (Demo).mp3',
         howl: null
     },
     {
-        freq: '81.4',
-        title: "BBC Radio 1",
-        src: 'http://bbcmedia.ic.llnwd.net/stream/bbcmedia_radio1_mf_q',
+        freq: '(Demo)',
+        title: "Dreamland",
+        src: '../tracks/Dreamland (Demo).mp3',
         howl: null
     },
     {
         freq: '89.9',
-        title: "Hip Hop Hits",
-        src: 'http://tunein4.streamguys1.com/hhbeafree5',
+        title: "Pancake",
+        src: '../tracks/Pancake (Demo).mp3',
         howl: null
     },
     {
-        freq: '98.3',
-        title: "Radio  Mirchi",
-        src: 'http://peridot.streamguys.com:7150/Mirchi',
+        freq: '(Demo)',
+        title: "Pretty Boy Problems (prod. BLOOSE)",
+        src: '../tracks/Pretty Boy Problems (Demo).wav',
         howl: null
-    },
-    {
-        freq: '103.3',
-        title: "80's Hits",
-        src: 'http://tunein4.streamguys1.com/80shtfree1',
-        howl: null
-    }]);
+    },]);
 //view rawradio.js hosted with ❤ by GitHub

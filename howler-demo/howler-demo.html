@@ -25,7 +25,7 @@
       <div id="station1" class="station">
          <div class="title">
             <div id="title1" class="subtitle"></div>
-            <div id="live1" class="live">LIVE</div>
+            <div id="live1" class="live"></div>
             <div id="playing1" class="playing">
                <div class="rect1"></div>
                <div class="rect2"></div>
@@ -38,7 +38,7 @@
       <div id="station2" class="station">
          <div class="title">
             <div id="title2" class="subtitle"></div>
-            <div id="live2" class="live">LIVE</div>
+            <div id="live2" class="live"></div>
             <div id="playing2" class="playing">
                <div class="rect1"></div>
                <div class="rect2"></div>
@@ -51,7 +51,7 @@
       <div id="station3" class="station">
          <div class="title">
             <div id="title3" class="subtitle"></div>
-            <div id="live3" class="live">LIVE</div>
+            <div id="live3" class="live"></div>
             <div id="playing3" class="playing">
                <div class="rect1"></div>
                <div class="rect2"></div>
@@ -89,6 +89,7 @@
             window['station' + i].addEventListener('click', function(index) {
               var isNotPlaying = (self.stations[index].howl && !self.stations[index].howl.playing());
               
+              console.log(radio);
               radio.stop();
          
               if (isNotPlaying || !self.stations[index].howl) {
@@ -150,7 +151,7 @@
          var radio = new Radio([
          {
             freq: '91.1',
-            title: "Radio City",
+            title: "Closer",
             src: '../tracks/Closer (Demo).mp3',
             howl: null
          },  
