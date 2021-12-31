@@ -193,11 +193,10 @@ $(document).ready(function () {
     }
 
     $(elmnt).addClass('in-front');
-    $(elmnt).addClass('no-select');
+
 
     function dragMouseDown(e) {
       e = e || window.event;
-      console.log(elmnt.id + "2");
       deselectWindows(elmnt.id);
       $(elmnt).addClass('in-front');
 

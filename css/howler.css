@@ -1,3 +1,21 @@
+#music-player-container {
+width: 100%;
+height: 100%;
+padding: 0;
+margin: 0;
+overflow: hidden;
+background: #5c258d;
+background: -moz-linear-gradient(-45deg, orange 0%, white 100%);
+background: -webkit-linear-gradient(-45deg, orange 0%, white 100%);
+background: linear-gradient(135deg, orange 0%, white 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#5c258d', endColorstr='#4389a2', GradientType=1);
+font-family: "Helvetica Neue", "Futura", "Trebuchet MS", Arial;
+-webkit-user-select: none;
+user-select: none;
+-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+
+
 /* Stations */
 .padding {
     width: 100%;
@@ -27,11 +45,11 @@
     background-color: rgba(255, 255, 255, 0.1);
   }
   .title {
-    font-size: 4vw;
-    line-height: 4vw;
+    font-size: 50px;
     font-weight: 300;
-    color: #fff;
+    color: black;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.33);
+    z-index: 999;
   }
   .subtitle {
     display: inline-block;

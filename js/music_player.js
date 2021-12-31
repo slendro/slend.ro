@@ -73,7 +73,7 @@ var radio = new Radio([
     {
         freq: '91.1',
         title: "Radio City",
-        src: 'http://prclive1.listenon.in:9960/',
+        src: '../tracks/Closer (Demo).mp3',
         howl: null
     },
     {

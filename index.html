@@ -51,6 +51,7 @@
 		<script type="text/javascript" src="libraries/effects/seriously.split.js"></script>
         <script language="javascript" type="text/javascript" src="js/sketch.js"></script>
         <script src="/libraries/node_modules/howler/dist/howler.js"></script>
+        <script src="/js/music_player.js"></script>
         <link rel="stylesheet" href="css/styles.css">
         <link rel="stylesheet" href="css/howler.css">
     </head>
@@ -399,7 +400,7 @@
                 </div>
             </div>
 
-            <div class="slend_window music_player" id="window_12"> 
+            <div class="slend_window music_player" id="music_player"> 
                 <div class="slend_window_header" id="window_11_header">
                     <div class="window_buttons">
                         <div class="close_button">
@@ -413,20 +414,24 @@
                         slendr-o.player
                     </div>
                 </div>
-                <div id="music_player-container">
+                <div id="music-player-container">
+                    <div class="title" style="text-align: center;color: black;"> slendr-o player </div>
+                    <div class="padding"></div>
                     <div id="station0" class="station">
-                        <div class="title">
-                           <div id="title0" class="subtitle"></div>
-                           <div id="live0" class="live">LIVE</div>
-                           <div id="playing0" class="playing">
-                              <div class="rect1"></div>
-                              <div class="rect2"></div>
-                              <div class="rect3"></div>
-                              <div class="rect4"></div>
-                              <div class="rect5"></div>
-                           </div>
-                        </div>
-                     </div>
+                       <div class="title">
+                          <div id="title0" class="subtitle"></div>
+                          <div id="live0" class="live">LIVE</div>
+                          <div id="playing0" class="playing">
+                             <div class="rect1"></div>
+                             <div class="rect2"></div>
+                             <div class="rect3"></div>
+                             <div class="rect4"></div>
+                             <div class="rect5"></div>
+                          </div>
+                       </div>
+                    </div>
+                    </div>
+                    <div class="padding"></div>
                 </div>
             </div>
 <!--        
@@ -473,6 +478,7 @@
                 <img class="slend_window_image" id="window_image_4" src="image/merch/3_longtee_gr.jpg">
             </div> -->
         </div>
+        
     </body>
     <footer>
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
