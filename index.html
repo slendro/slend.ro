@@ -50,7 +50,9 @@
 		<script type="text/javascript" src="libraries/effects/seriously.vignette.js"></script>
 		<script type="text/javascript" src="libraries/effects/seriously.split.js"></script>
         <script language="javascript" type="text/javascript" src="js/sketch.js"></script>
+        <script src="/libraries/node_modules/howler/dist/howler.js"></script>
         <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/howler.css">
     </head>
     <body>
         <div id="slend_toolbar">
@@ -64,14 +66,14 @@
             </div>
         </div>
 
-        <div id="slend_desktop">
-            <div class="slend_bg" id="software_logo">
+        <div id="slend_desktop" class="no-select">
+            <div class="slend_bg no-select" id="software_logo">
                 <img src="image/software_logo.png">
             </div>
-            <div class="slend_bg" id="software_logo">
+            <div class="slend_bg no-select" id="software_logo">
                 <img src="image/software_logo.png">
             </div>
-            <div class="slend_bg" id="software_logo">
+            <div class="slend_bg no-select" id="software_logo">
                 <img src="image/software_logo.png">
             </div>
             <div class="slend_icon clean_up" id="icon_0" data-windows="clean">
@@ -138,7 +140,7 @@
                     Games
                 </div>
             </div>
-            <div class="slend_icon" id="icon_8">
+            <div class="slend_icon" id="icon_8" data-windows="music_player">
                 <div class="icon_img" id="icon_8_header">
                     <img src="image/icons/Music Disc.ico">
                 </div>
@@ -285,7 +287,7 @@
                         coming_soon.dro
                     </div>
                 </div>
-                <img class="slend_window_image" id="window_image_7" src="image/cd.jpg">
+                <img class="slend_window_image no-select" id="window_image_7" src="image/cd.jpg">
             </div>
 
             <div class="slend_window" id="slend_img_1" data-windows="slend_img_1"> 
@@ -394,6 +396,37 @@
                 </div>
                 <div id="webcam-canvas-container">
 
+                </div>
+            </div>
+
+            <div class="slend_window music_player" id="window_12"> 
+                <div class="slend_window_header" id="window_11_header">
+                    <div class="window_buttons">
+                        <div class="close_button">
+                            X
+                        </div>
+                        <div class="minimize_button">
+                            ━
+                        </div>
+                    </div>
+                    <div id="slend_window_title">
+                        slendr-o.player
+                    </div>
+                </div>
+                <div id="music_player-container">
+                    <div id="station0" class="station">
+                        <div class="title">
+                           <div id="title0" class="subtitle"></div>
+                           <div id="live0" class="live">LIVE</div>
+                           <div id="playing0" class="playing">
+                              <div class="rect1"></div>
+                              <div class="rect2"></div>
+                              <div class="rect3"></div>
+                              <div class="rect4"></div>
+                              <div class="rect5"></div>
+                           </div>
+                        </div>
+                     </div>
                 </div>
             </div>
 <!--        

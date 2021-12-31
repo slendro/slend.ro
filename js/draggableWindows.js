@@ -5,69 +5,59 @@ var tabs = document.getElementsByClassName("slend_minimized");
 var stacking = true;
 var webcamOn = false;
 
-$(document).ready(function(){
+$(document).ready(function () {
 
   // $(".merch_icon").click(loadMerch);
   $(".clean_up").click(cleanUp);
   $(".folder").hide();
   $("#webcam-canvas").hide();
 
-  $(document).on("click",".slend_icon", function () {
+  $(document).on("click", ".slend_icon", function () {
     loadFolder(this);
   });
 
-  $(document).on("click",".minimize_button", function () {
+  $(document).on("click", ".minimize_button", function () {
     console.log(this);
     minimizeWindow(this);
   });
 
-  function loadIcons()
-  {
-    for(var i = 0; i < icons.length; i++)
-    {
-      if(icons[i].parentElement.parentElement.className.includes("slend_window"))
-      {
+  function loadIcons() {
+    for (var i = 0; i < icons.length; i++) {
+      if (icons[i].parentElement.parentElement.className.includes("slend_window")) {
         $(icons[i]).addClass("ico_foldered");
         console.log(icons[i].parentElement.className);
-      }else{
-        if(i == 0)
-        {
-            icons[i].style.top = (50 * (i+1.52)) + "px";
+      } else {
+        if (i == 0) {
+          icons[i].style.top = (50 * (i + 1.52)) + "px";
         } else {
-            dragElement(icons[i]);
-            icons[i].style.top = (120 * (i+1)) + "px";
+          dragElement(icons[i]);
+          icons[i].style.top = (120 * (i + 1)) + "px";
         }
 
-        if(i <= 6)
-        {
-            icons[i].style.left = 50 + "px";
-        } else if (i <= 12)
-        {
-            icons[i].style.left = 150 + "px";
-            icons[i].style.top = (120 * (i-1)) - 480 + "px";
-        } else if (i <= 18)
-        {
-            icons[i].style.left = 250 + "px";
-            icons[i].style.top = (120 * (i-1)) - 1200 + "px";
+        if (i <= 6) {
+          icons[i].style.left = 50 + "px";
+        } else if (i <= 12) {
+          icons[i].style.left = 150 + "px";
+          icons[i].style.top = (120 * (i - 1)) - 480 + "px";
+        } else if (i <= 18) {
+          icons[i].style.left = 250 + "px";
+          icons[i].style.top = (120 * (i - 1)) - 1200 + "px";
         }
       }
     }
   }
-  
-  function loadWindows()
-  {
-    for(var i = 0; i < windows.length; i++)
-    {
+
+  function loadWindows() {
+    for (var i = 0; i < windows.length; i++) {
       dragElement(windows[i]);
-      if(windows[i].parentElement.className == "slend_window")
-      {
+      if (windows[i].parentElement.className == "slend_window") {
         windows[i].style.marginTop = "10px";
       } else {
         windows[i].style.left = 630 + "px";
-        windows[i].style.top = (800 * (i+0.3)) - 20 + "px";
+        windows[i].style.top = (800 * (i + 0.3)) - 20 + "px";
       }
-      
-      $(windows[i].children[0].children[0].children[0]).click(function(e){
+
+      $(windows[i].children[0].children[0].children[0]).click(function (e) {
         closeWindow(e);
       });
 
@@ -80,25 +70,21 @@ $(document).ready(function(){
     // }
   }
 
-  function cleanUp()
-  {
+  function cleanUp() {
     loadIcons();
     loadWindows();
   }
 
-  function loadFolder(elmnt)
-  {
+  function loadFolder(elmnt) {
     console.log(elmnt);
     var id = elmnt.id;
     var classN = elmnt.className;
 
-    if(id == null)
-    {
+    if (id == null) {
       id = elmnt[0].id;
     }
 
-    if(classN == null)
-    {
+    if (classN == null) {
       classN = elmnt[0].className;
     }
 
@@ -109,35 +95,30 @@ $(document).ready(function(){
     console.log(data);
 
     var newWindow = document.getElementById(data);
-    if(newWindow == null)
-    {
-      newWindow = $("."+data);
+    if (newWindow == null) {
+      newWindow = $("." + data);
     }
     console.log(newWindow);
 
-    for(var i = 0; i < icons.length; i++)
-    {
+    for (var i = 0; i < icons.length; i++) {
       $(icons[i]).removeClass("ico_selected");
+      $(newWindow).removeClass("in-front");
     }
 
-    $(newWindow).addClass(".in-front");
+    //$(newWindow).addClass("in-front");
 
-    var window = $("#"+data);
+    var window = $("#" + data);
 
-    if(classN.includes("foldered"))
-    {
+    if (classN.includes("foldered")) {
       console.log(newWindow);
-      
+
       window.show();
-      setWindowPosition(window[0],$(windows).index(window));
+      setWindowPosition(window[0], $(windows).index(window));
       $(elmnt).addClass("ico_selected");
     } else {
-      if(data != "clean")
-      {
-        if(!stacking)
-        {
-          for(var i = 0; i < windows.length; i++)
-          {
+      if (data != "clean") {
+        if (!stacking) {
+          for (var i = 0; i < windows.length; i++) {
             $(windows[i]).hide();
           }
         }
@@ -145,13 +126,12 @@ $(document).ready(function(){
         $(newWindow).show();
         console.log(newWindow);
         console.log($(windows).index(newWindow));
-        setWindowPosition(newWindow,35 + $(windows).index(window));
+        setWindowPosition(newWindow, 35 + $(windows).index(window));
         $(elmnt).addClass("ico_selected");
       }
     }
-    
-    if(data == "webcam" && !webcamOn)
-    {
+
+    if (data == "webcam" && !webcamOn) {
       webcamCanvas.parent('webcam-canvas-container');
       console.log(document.getElementById($(".webcam").attr('id')).getBoundingClientRect().width);
 
@@ -163,12 +143,14 @@ $(document).ready(function(){
     }
   }
 
-  function setWindowPosition(elmnt, offset)
-  {
+  function setWindowPosition(elmnt, offset) {
     var e = elmnt;
+    if ($(elmnt).hasClass('behind')) {
+      $(elmnt).removeClass('behind');
+    }
+    $(elmnt).addClass('in-front');
     console.log(e);
-    if(elmnt.length > 0)
-    {
+    if (elmnt.length > 0) {
       e = elmnt[0];
       console.log(e);
       e.style.top = "15%";
@@ -178,7 +160,22 @@ $(document).ready(function(){
     e.style.top = "15%";
     e.style.left = offset + $(windows).index(elmnt) + "%";
   }
-  
+
+  function deselectWindows(selectedWindowID) {
+    for (var i = 0; i < windows.length; i++) {
+      if (windows[i].id == selectedWindowID) {
+        $(windows[i]).removeClass("behind");
+        $(windows[i]).addClass("in-front");
+        console.log(windows[i].id + "selected");
+      } else {
+        $(windows[i]).removeClass("in-front");
+        $(windows[i]).removeClass("behind");
+        $(windows[i]).addClass('behind');
+      }
+      //console.log(windows[i].id + "deselected");
+    }
+  }
+
   loadIcons();
   loadWindows();
   console.log(document.getElementById("slend_img_1"));
@@ -194,9 +191,16 @@ $(document).ready(function(){
       // otherwise, move the DIV from anywhere inside the DIV:
       elmnt.onmousedown = dragMouseDown;
     }
-  
+
+    $(elmnt).addClass('in-front');
+    $(elmnt).addClass('no-select');
+
     function dragMouseDown(e) {
       e = e || window.event;
+      console.log(elmnt.id + "2");
+      deselectWindows(elmnt.id);
+      $(elmnt).addClass('in-front');
+
       e.preventDefault();
       // get the mouse cursor position at startup:
       pos3 = e.clientX;
@@ -205,7 +209,7 @@ $(document).ready(function(){
       // call a function whenever the cursor moves:
       document.onmousemove = elementDrag;
     }
-  
+
     function elementDrag(e) {
       e = e || window.event;
       e.preventDefault();
@@ -218,7 +222,7 @@ $(document).ready(function(){
       elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
       elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
     }
-  
+
     function closeDragElement() {
       // stop moving when mouse button is released:
       document.onmouseup = null;
@@ -226,27 +230,27 @@ $(document).ready(function(){
     }
   }
 
-  function closeWindow(elmnt)
-  {
+  function closeWindow(elmnt) {
     $(elmnt.target.parentElement.parentElement.parentElement).hide();
+    $(elmnt.target.parentElement.parentElement.parentElement).removeClass("in-front");
+    $(elmnt.target.parentElement.parentElement.parentElement).removeClass("behind");
     var parentWindow = $(elmnt.target)[0].parentElement.parentElement.parentElement;
     console.log(parentWindow.className);
-    if(parentWindow.className.includes("webcam"))
-    {
+    if (parentWindow.className.includes("webcam")) {
       webcamOn = false;
       stopCamera();
     }
   }
 
-  function minimizeWindow(elmnt)
-  {
+  function minimizeWindow(elmnt) {
     var window = elmnt.parentElement.parentElement.parentElement;
+    $(elmnt.target.parentElement.parentElement.parentElement).removeClass("in-front");
+    $(elmnt.target.parentElement.parentElement.parentElement).removeClass("behind");
     console.log(window);
 
     console.log($(tabs)[$(tabs).index(window)]);
 
-    if($(window).hasClass("slend_minimized"))
-    {
+    if ($(window).hasClass("slend_minimized")) {
       $(window).removeClass("slend_minimized");
       $(window).addClass("absolute");
       $(".slend_desktop").append($(window)[$(tabs).index(window)]);
@@ -257,20 +261,18 @@ $(document).ready(function(){
     var tabID = $(window).attr('id') + "_tab";
     var contains = false;
 
-    if($("#"+tabID)[0] != null)
-    {
+    if ($("#" + tabID)[0] != null) {
       contains = true;
     }
 
-    if(contains)
-    {
+    if (contains) {
       console.log("Tab already created");
     } else {
       tabID = $(window).attr('id') + "_tab";
       var tab = '<div' + ' id="' + tabID + '"' + ' class="flex-item">';
       console.log($(tab)[0]);
       $(".slend_bottomTabs").append($(tab));
-      $("#"+tabID).append($(window));
+      $("#" + tabID).append($(window));
     }
 
     console.log(contains);

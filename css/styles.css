@@ -72,7 +72,7 @@ body {
 }
 
 .behind {
-  z-index: 1;
+  z-index: 2;
 }
 
 .slend_window_header {
@@ -99,7 +99,7 @@ body {
 
 .slend_icon {
   position: absolute;
-  z-index: 9;
+  z-index: 1;
 }
 
 .slend_bottomTabs_container {
@@ -195,7 +195,7 @@ body {
   padding-top: 7px;
 }
 
-#noselect {
+.no-select {
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */
   -khtml-user-select: none; /* Konqueror HTML */
