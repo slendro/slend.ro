@@ -95,6 +95,7 @@ $(document).ready(function () {
     console.log(data);
 
     var newWindow = document.getElementById(data);
+    
     if (newWindow == null) {
       newWindow = $("." + data);
     }

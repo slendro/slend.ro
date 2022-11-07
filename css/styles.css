@@ -61,6 +61,11 @@ body {
   width: 650px;
 }
 
+/* OPTIMIZEEEEE */
+.stuff_folder{
+  width: auto;
+}
+
 .folder {
   background-color: #f1f1f1;
   border: 1px solid #d3d3d3;
@@ -160,7 +165,6 @@ body {
 
 .ico_foldered {
   position: relative;
-  max-width: 50px;
   padding: 20px;
 }
 
@@ -176,6 +180,13 @@ body {
 .slend_icon:hover {
   background-color: rgb(1, 158, 124);
   color: white;
+}
+
+.slend_icon{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .slend_desktop_grid {

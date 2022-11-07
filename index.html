@@ -6,6 +6,7 @@
         <script language="javascript" src="libraries/p5.dom.js"></script>
         <script language="javascript" src="libraries/p5.sound.js"></script>
         <script language="javascript" src="libraries/seriously.js"></script>
+        <script type="text/javascript" src="libraries/amplitudejs-5.3.2/dist/amplitude.js"></script> 
         <script type="text/javascript" src="libraries/effects/seriously.accumulator.js"></script>
 		<script type="text/javascript" src="libraries/effects/seriously.ascii.js"></script>
 		<script type="text/javascript" src="libraries/effects/seriously.bleach-bypass.js"></script>
@@ -51,7 +52,11 @@
 		<script type="text/javascript" src="libraries/effects/seriously.split.js"></script>
         <script language="javascript" type="text/javascript" src="js/sketch.js"></script>
         <link rel="stylesheet" href="css/styles.css">
-        <link rel="stylesheet" href="css/howler.css">
+        <link rel="stylesheet" href="css/amplitude_styles.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+        <link rel="stylesheet" type="text/css" href="libraries/js-music-player-master/style.css">
+        <!-- <link rel="stylesheet" href="css/howler.css"> -->
     </head>
     <body>
         <div id="slend_toolbar">
@@ -123,14 +128,6 @@
                     Paint
                 </div>
             </div>
-            <div class="slend_icon" id="icon_6" data-windows="folder">
-                <div class="icon_img" id="icon_6_header">
-                    <img src="image/icons/Folder.ico">
-                </div>
-                <div class="icon_label" id="noselect"> 
-                    stuff
-                </div>
-            </div>
             <div class="slend_icon" id="icon_7">
                 <div class="icon_img" id="icon_7_header">
                     <img src="image/icons/Joy.ico">
@@ -139,12 +136,20 @@
                     Games
                 </div>
             </div>
-            <div class="slend_icon" id="icon_8" data-windows="music_player">
+            <!-- <div class="slend_icon" id="icon_8">
                 <div class="icon_img" id="icon_8_header">
                     <img src="image/icons/Music Disc.ico">
                 </div>
                 <div class="icon_label" id="noselect"> 
                     tunes
+                </div>
+            </div> -->
+            <div class="slend_icon" id="icon_6" data-windows="stuff_folder">
+                <div class="icon_img" id="icon_6_header">
+                    <img src="image/icons/Folder.ico">
+                </div>
+                <div class="icon_label" id="noselect"> 
+                    stuff
                 </div>
             </div>
             <div class="slend_icon" id="icon_9">
@@ -325,6 +330,61 @@
                 <img class="slend_window_image" id="window_image_8" src="image/tamiya_1.jpg">
             </div>
 
+            
+            <div class="slend_window" id="slend_img_3" data-windows="slend_img_3"> 
+                <div class="slend_window_header" id="window_10_header">
+                    <div class="window_buttons">
+                        <div class="close_button">
+                            X
+                        </div>
+                        <div class="minimize_button">
+                            ━
+                        </div>
+                    </div>
+
+                    <div id="slend_window_title">
+                        coming_soon.dro
+                    </div>
+                </div>
+                <img class="slend_window_image" id="window_image_8" src="image/midjourney_1.png">
+            </div>
+
+            <div class="slend_window" id="slend_img_4" data-windows="slend_img_4"> 
+                <div class="slend_window_header" id="window_10_header">
+                    <div class="window_buttons">
+                        <div class="close_button">
+                            X
+                        </div>
+                        <div class="minimize_button">
+                            ━
+                        </div>
+                    </div>
+
+                    <div id="slend_window_title">
+                        coming_soon.dro
+                    </div>
+                </div>
+                <img class="slend_window_image" id="window_image_8" src="image/midjourney_2.png">
+            </div>
+
+            <div class="slend_window" id="slend_img_5" data-windows="slend_img_5"> 
+                <div class="slend_window_header" id="window_10_header">
+                    <div class="window_buttons">
+                        <div class="close_button">
+                            X
+                        </div>
+                        <div class="minimize_button">
+                            ━
+                        </div>
+                    </div>
+
+                    <div id="slend_window_title">
+                        coming_soon.dro
+                    </div>
+                </div>
+                <img class="slend_window_image" id="window_image_8" src="image/midjourney_3.png">
+            </div>
+
             <div class="slend_window about" id="window_2">
                 <div class="slend_window_header" id="window_2_header">
                     <div class="window_buttons">
@@ -345,7 +405,7 @@
                 <p>Brandon McKinney</p>
             </div>
 
-            <div class="slend_window folder" id="window_8">
+            <div class="slend_window stuff_folder" id="window_8">
                 <div class="slend_window_header" id="window_8_header">
                     <div class="window_buttons">
                         <div class="close_button">
@@ -360,8 +420,58 @@
                     </div>
                 </div>
                 <div class="folder_icons">
-                    <div class="slend_icon" id="icon_14" data-windows="slend_img_2">
+                    <div class="slend_icon" id="icon_17" data-windows="slend_img_3">
+                        <div class="icon_img" id="icon_17_header">
+                            <img src="image/icons/Painting.ico">
+                        </div>
+                        <div class="icon_label" id="noselect"> 
+                            dreams from the matrix.png
+                        </div>
+                    </div>
+                    <div class="slend_icon" id="icon_17" data-windows="slend_img_4">
+                        <div class="icon_img" id="icon_17_header">
+                            <img src="image/icons/Painting.ico">
+                        </div>
+                        <div class="icon_label" id="noselect"> 
+                            headshot1.png
+                        </div>
+                    </div>
+                    <div class="slend_icon" id="icon_17" data-windows="slend_img_5">
+                        <div class="icon_img" id="icon_17_header">
+                            <img src="image/icons/Painting.ico">
+                        </div>
+                        <div class="icon_label" id="noselect"> 
+                            the_daemon.png
+                        </div>
+                    </div>
+                    <div class="slend_icon" id="icon_15" data-windows="unreleased_vol_1">
                         <div class="icon_img" id="icon_6_header">
+                            <img src="image/icons/Music Disc.ico">
+                        </div>
+                        <div class="icon_label" id="noselect"> 
+                            unreleased_vol_1.mp3
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slend_window tamiya_folder" id="window_12">
+                <div class="slend_window_header" id="window_12_header">
+                    <div class="window_buttons">
+                        <div class="close_button">
+                            X
+                        </div>
+                        <div class="minimize_button">
+                            ━
+                        </div>
+                    </div>
+                    <div id="slend_window_title">
+                        Tamiya.dro
+                    </div>
+                </div>
+                <div class="folder_icons">
+                    <div class="slend_icon" id="icon_16" data-windows="slend_img_2">
+                        <div class="icon_img" id="icon_16_header">
                             <img src="image/icons/Painting.ico">
                         </div>
                         <div class="icon_label" id="noselect"> 
@@ -373,7 +483,7 @@
                             <img src="image/icons/Music Disc.ico">
                         </div>
                         <div class="icon_label" id="noselect"> 
-                            tamiya.mp3
+                            tamiya_mixtape.mp3
                         </div>
                     </div>
                 </div>
@@ -398,8 +508,8 @@
                 </div>
             </div>
 
-            <div class="slend_window music_player" id="music_player"> 
-                <div class="slend_window_header" id="window_11_header">
+            <div class="slend_window music_player" id="unreleased_vol_1" data-windows="unreleased_vol_1"> 
+                <div class="slend_window_header" id="unreleased_vol_1_header">
                     <div class="window_buttons">
                         <div class="close_button">
                             X
@@ -409,68 +519,69 @@
                         </div>
                     </div>
                     <div id="slend_window_title">
-                        slendr-o.player
+                        unreleased_vol_1.mp3
                     </div>
                 </div>
                 <div id="music-player-container">
-                    <div class="title" style="text-align: center;color: black;"> slendr-o player </div>
-                    <div class="padding"></div>
-                    <div id="station0" class="station">
-                       <div class="track">
-                          <div id="title0" class="subtitle"></div>
-                          <div id="live0" class="live">PLAYING</div>
-                          <div id="playing0" class="playing">
-                             <div class="rect1"></div>
-                             <div class="rect2"></div>
-                             <div class="rect3"></div>
-                             <div class="rect4"></div>
-                             <div class="rect5"></div>
+                    <div class="player no-select">
+                        <div class="details">
+                          <div class="now-playing">PLAYING x OF y</div>
+                          <div class="track-art"></div>
+                          <div class="track-name">Track Name</div>
+                          <div class="track-artist">Track Artist</div>
+                        </div>
+                        <div class="buttons">
+                          <div class="prev-track" onclick="prevTrack()"><i class="fa fa-step-backward fa-2x"></i></div>
+                          <div class="playpause-track" onclick="playpauseTrack()"><i class="fa fa-play-circle fa-5x"></i></div>
+                          <div class="next-track" onclick="nextTrack()"><i class="fa fa-step-forward fa-2x"></i></div>
+                        </div>
+                        <div class="slider_container">
+                          <div class="current-time">00:00</div>
+                          <input type="range" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()">
+                          <div class="total-duration">00:00</div>
+                        </div>
+                        <div class="slider_container" id="volume-slider">
+                          <i class="fa fa-volume-down"></i>
+                          <input type="range" min="1" max="100" value="99" class="volume_slider" onchange="setVolume()">
+                          <i class="fa fa-volume-up"></i>
+                        </div>
+                    </div>
+                    <!-- <div id="single-song-player">
+                        <img amplitude-song-info="cover_art_url" amplitude-main-song-info="true"/>
+                        <div class="song amplitude-song-container" amplitude-song-index="0">
+                            Title - Artist 1
                           </div>
-                       </div>
-                    </div>
-                    <div id="station1" class="station">
-                        <div class="track">
-                           <div id="title1" class="subtitle"></div>
-                           <div class="playing-wrapper">
-                                <div id="live1" class="live">LIVE</div>
-                                <div id="playing1" class="playing">
-                                    <div class="rect1"></div>
-                                    <div class="rect2"></div>
-                                    <div class="rect3"></div>
-                                    <div class="rect4"></div>
-                                    <div class="rect5"></div>
-                                </div>
-                           </div>
+                          <div class="song amplitude-song-container" amplitude-song-index="1">
+                            Title - Artist 2
+                          </div>
+                          <div class="song amplitude-song-container" amplitude-song-index="2">
+                            Title - Artist 3
+                          </div>
+                          <div class="song amplitude-song-container" amplitude-song-index="3">
+                            Title - Artist 4
+                          </div>
+                          <div class="song amplitude-song-container" amplitude-song-index="4">
+                            Title - Artist 5
+                          </div>
+                        <div class="control-container">
+                            <div class="amplitude-play-pause" amplitude-main-play-pause="true" id="play-pause"></div>
                         </div>
-                     </div>
-                     <div id="station2" class="station">
-                        <div class="track">
-                           <div id="title2" class="subtitle"></div>
-                           <div id="live2" class="live">PLAYING</div>
-                           <div id="playing2" class="playing">
-                              <div class="rect1"></div>
-                              <div class="rect2"></div>
-                              <div class="rect3"></div>
-                              <div class="rect4"></div>
-                              <div class="rect5"></div>
-                           </div>
+                        <div class="bottom-container">
+                            <progress class="amplitude-song-played-progress" amplitude-main-song-played-progress="true" id="song-played-progress"></progress>
+                            <div class="time-container">
+                                <span class="current-time">
+                                    <span class="amplitude-current-minutes" amplitude-main-current-minutes="true"></span>:<span class="amplitude-current-seconds" amplitude-main-current-seconds="true"></span>
+                                </span>
+                                <span class="duration">
+                                    <span class="amplitude-duration-minutes" amplitude-main-duration-minutes="true"></span>:<span class="amplitude-duration-seconds" amplitude-main-duration-seconds="true"></span>
+                                </span>
+                            </div>
+                            <div class="meta-container">
+                                <span amplitude-song-info="name" amplitude-main-song-info="true" class="song-name"></span>
+                                <span amplitude-song-info="artist" amplitude-main-song-info="true"></span>
+                            </div>
                         </div>
-                     </div>
-                     <div id="station3" class="station">
-                        <div class="track">
-                           <div id="title3" class="subtitle"></div>
-                           <div id="live3" class="live">PLAYING</div>
-                           <div id="playing3" class="playing">
-                              <div class="rect1"></div>
-                              <div class="rect2"></div>
-                              <div class="rect3"></div>
-                              <div class="rect4"></div>
-                              <div class="rect5"></div>
-                           </div>
-                        </div>
-                     </div>
-                    </div>
-                    <div class="padding"></div>
+                    </div> -->
                 </div>
             </div>
 <!--        
@@ -522,7 +633,8 @@
     <footer>
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
         <script src="js/draggableWindows.js"></script>
-        <script src="libraries/node_modules/howler/dist/howler.js"></script>
-        <script src="js/music_player.js"></script>
+        <!-- <script type="text/javascript" src="js/amplitude.js"></script> -->
+        <script src="libraries/js-music-player-master/main.js"></script>
+        <!-- <script src="js/music_player.js"></script> -->
     </footer>
 </html>
